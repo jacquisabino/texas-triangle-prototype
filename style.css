@@ -1,5 +1,6 @@
 .website-header{
     display: flex;
+    justify-content: space-between;
 }
 
 body{
@@ -13,8 +14,4 @@ body{
     left: 0px;
     width: 100px;
     height: auto;
-}
-
-.actions{
-    flex: auto;
 }
