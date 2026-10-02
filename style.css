@@ -1,3 +1,6 @@
+header{
+    display: flex;
+}
 
 body{
     background-image: url(Background-map.png);
@@ -8,6 +11,10 @@ body{
 .logo{
     position: fixed;
     left: 0px;
-    width: 250px;
+    width: 100px;
     height: auto;
+}
+
+.actions{
+    flex: auto;
 }
