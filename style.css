@@ -3,6 +3,10 @@
     justify-content: space-between;
 }
 
+.website-header form{
+    display: flex;
+}
+
 body{
     background-image: url(Background-map.png);
     background-position: center;
@@ -17,6 +21,4 @@ body{
     display: flex;
 }
 
-.login-form{
-    display: flex;
-}
+
