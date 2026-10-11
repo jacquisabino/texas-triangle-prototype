@@ -1,10 +1,6 @@
-.website-header{
-    display: flex;
-    justify-content: space-between;
-}
 
 .website-header form{
-    display: flex;
+    float: right;
 }
 
 body{
@@ -14,11 +10,11 @@ body{
 }
 
 .logo{
-    position: fixed;
+    float: left;
     left: 0px;
     width: 100px;
     height: auto;
-    display: flex;
+   
 }
 
 
