@@ -1,6 +1,10 @@
 
-.website-header form{
+.website-header a{
     float: right;
+    color: #990000;
+    font-size: 18;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
@@ -16,9 +20,6 @@ body{
     height: auto;
 }
 
-a {
-    color: #990000;
-}
 
 a:hover {
     text-decoration: underline;
