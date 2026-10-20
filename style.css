@@ -29,11 +29,16 @@ a:hover {
     text-decoration: underline;
 }
 
-.fieldset {
-    position: absolute;
-    top: 50%;
-    left: 50%;
+fieldset {
+    margin: auto;
     background-color: #f6f5ef;
-    font-family: 'sans-serif';
+}
+
+fieldset h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+fieldset p{
+    font-family: 'Times New Roman', Times, serif;
 }
 
