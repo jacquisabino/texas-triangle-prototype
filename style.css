@@ -6,7 +6,7 @@ header {
 header a{
     float: right;
     color: #990000;
-    font-size: 18;
+    font-size: 1.5em;
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -20,7 +20,7 @@ body{
 .logo{
     float: left;
     left: 0px;
-    width: 100px;
+    width: 25%;
     height: auto;
 }
 
@@ -29,4 +29,11 @@ a:hover {
     text-decoration: underline;
 }
 
+.form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #f6f5ef;
+    font-family: 'sans-serif';
+}
 
