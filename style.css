@@ -1,0 +1,44 @@
+header {
+    padding: 32px;
+}
+
+
+header a{
+    float: right;
+    color: #990000;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-image: url(Background-map.png);
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.logo{
+    float: left;
+    left: 0px;
+    width: 25%;
+    height: 15%;
+}
+
+
+a:hover {
+    text-decoration: underline;
+}
+
+fieldset {
+    margin: auto;
+    background-color: #f6f5ef;
+}
+
+fieldset h1{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+fieldset p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
