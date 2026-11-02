@@ -42,6 +42,13 @@ fieldset p{
     font-family: 'Times New Roman', Times, serif;
 }
 
+/* WILL HAVE TO UPDATE STATUS, AND RESULT */
+
+.status { margin-top: 1.5rem; color: #facc15; font-size: 0.95rem; }
+
+.result { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #334155; }
+.result h2 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #38bdf8; }
+
 .hidden {
     display: none;
 }
