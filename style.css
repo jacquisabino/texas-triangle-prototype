@@ -20,8 +20,10 @@ body{
 .logo{
     float: left;
     left: 0px;
+    
+    /* 
     width: 25%;
-    height: 15%;
+    height: 15%;*/
 }
 
 
