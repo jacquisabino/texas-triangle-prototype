@@ -17,10 +17,10 @@ body{
     background-attachment: fixed;
 }
 
-.logo{
+header .logo{
     float: left;
     left: 0px;
-    
+
     /* 
     width: 25%;
     height: 15%;*/
