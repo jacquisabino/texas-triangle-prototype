@@ -1,10 +1,11 @@
-header {
+.header {
+    overflow:hidden;
     padding: 32px;
 
 }
 
 
-header a{
+.header a{
     float: right;
     color: #990000;
     font-size: 1.5em;
@@ -18,7 +19,7 @@ body{
     background-attachment: fixed;
 }
 
-header img{
+.header img{
     /* modify image size relative to header */
     position: relative;
     float: left;
