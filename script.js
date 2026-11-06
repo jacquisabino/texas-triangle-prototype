@@ -70,6 +70,14 @@ fetch('./Data/small_dataset.csv')
         ready = true;
         document.getElementById('status').textContent =
         `✅ Dataset loaded: ${addresses.size.toLocaleString()} addresses ready.`;
+
+        /* For simple testing purposes  */
+        const addressArr = [...addresses];
+        
+        const bulletedList = addressArr.map(add => `<li>${add}</li>`).join("");
+        const htmlContent = `<ul class="address-list">${bulletedList}</ul>`;
+
+        document.getElementById('status').innerHTML = htmlContent;
     })
     .catch(err => {
         document.getElementById('status').textContent = '❌ ' + err.message;
