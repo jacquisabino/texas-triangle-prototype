@@ -4,7 +4,6 @@
 
 }
 
-
 .header a{
     float: right;
     color: #990000;
@@ -27,14 +26,12 @@ body{
     background-attachment: fixed;
 }
 
-
-
 a:hover {
     text-decoration: underline;
 }
 
 fieldset {
-    margin: auto;
+    margin: 3rem;
     background-color: #f6f5ef;
 }
 
@@ -46,9 +43,20 @@ fieldset p{
     font-family: 'Times New Roman', Times, serif;
 }
 
+.card {
+    /* background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 2rem; */
+    border: 2px solid black;
+    background-color: #f6f5ef;
+    margin: 3rem;
+  }
+  
+
 /* WILL HAVE TO UPDATE STATUS, AND RESULT */
 
-.status { margin-top: 1.5rem; color: #facc15; font-size: 0.95rem; }
+.status { color: black; font-size: 0.95rem; }
 
 .result { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #334155; }
 .result h2 { font-size: 1.1rem; margin-bottom: 0.8rem; color: #38bdf8; }
