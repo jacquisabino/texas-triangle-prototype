@@ -17,7 +17,7 @@ let ready = false;
 // Only unique nodes are parcelID
 // only things I care about are ParcelID, Address, and landlord
 // functionally creates a bipartitie graph 
-fetch('Data/small_dataset.csv')
+fetch('./Data/small_dataset.csv')
     .then(res => {
         if(!res.ok) throw new Error('Could not load Data/owners_data');
         return res.text();
