@@ -69,7 +69,7 @@ fetch('./Data/small_dataset.csv')
 
         ready = true;
         document.getElementById('status').textContent =
-        `✅ Dataset loaded: ${graph} graph ready.`;
+        `✅ Dataset loaded: ${graph[660028]} graph ready.`;
 
         /* For simple testing purposes  
         const addressArr = [...addresses];
