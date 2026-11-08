@@ -1,22 +1,21 @@
 // CSV Search Engine using JavaScript 
 // For now, building graph 
 
-// ref graph 
-let refGraph = {};
-
 let graph = {};
 
-// these are new additions 
+// hashmap for each owner present and their properties
+const properties = new Map();
+const addToOwner = new Map();
+
 let addresses = new Set();
 let owners = new Set();
 
-let nodeSet = new Set();
 let ready = false;
 
 // Load and parse the CSV file
 // Only unique nodes are parcelID
 // only things I care about are ParcelID, Address, and landlord
-// functionally creates a bipartitie graph 
+// functionally creates a bipartitie graph (idk)
 fetch('./Data/small_dataset.csv')
     .then(res => {
         if(!res.ok) throw new Error('Could not load Data/owners_data');
@@ -38,10 +37,6 @@ fetch('./Data/small_dataset.csv')
 
             if (cols.length < 2) continue;
 
-            // ref code; net neutral 
-            const node = cols[2].trim();
-            const neighbor = cols[1].trim();
-
             const addy = cols[2].trim();
             const id = cols[3].trim();
             const owner = cols[14].trim();
@@ -49,6 +44,7 @@ fetch('./Data/small_dataset.csv')
             // parcel id is the only unique element per line so that will 
             // be left set 
             // first map to address 
+
             if(!addy || !id || !owner) continue;
             if(!graph[id]) graph[id] = [];
             graph[id].push(addy);
@@ -57,19 +53,32 @@ fetch('./Data/small_dataset.csv')
             addresses.add(addy);
             owners.add(owner);
 
+            if(!properties.has(owner)){
+                // create new set to keep track of parcels  
+                let parcelSet = new Set();
+                parcelSet.add(id);
+                properties.set(owner, parcelSet);
+            } else {
+                // owner is already present 
+                let currParcels = properties.get(owner);
+                currParcels.add(id);
+                // shouldn't have to re add to map. Since sets are mutable
+            }
 
-            // reference code; should have zero effect on my actual graph
-            if (!node || !neighbor) continue;
-            if (!refGraph[node]) refGraph[node] = [];
-            refGraph[node].push(neighbor);
-            nodeSet.add(node);
-            nodeSet.add(neighbor);
+            // can the same address have different owners (I think so)
+            // two different parcels can belong of the same address can 
+            // belong to two different people. I actually don't know 
+            // for the purposes of today, I will assume not but i will need to check
+            if(!addToOwner.has(addy)){
+                addToOwner.set(addy, owner);
+            }
+            
           }
 
 
         ready = true;
         document.getElementById('status').textContent =
-        `✅ Dataset loaded: ${graph[660028]} graph ready.`;
+        `✅ Dataset loaded: ${addresses.size.toLocaleString()} adresses ready.`;
 
         /* For simple testing purposes  
         const addressArr = [...addresses];
@@ -82,3 +91,32 @@ fetch('./Data/small_dataset.csv')
     .catch(err => {
         document.getElementById('status').textContent = '❌ ' + err.message;
     });
+
+// Using BFS to find parcelID/s based on, address OR Landlord 
+// To Do: using DataTable implementation to compare runtime 
+// this is simpler but I worry abt it scaling poorly 
+
+/* But if number of times an address or owner appears is unkown, bfs and dfs 
+can't do much efficiency wise. What I can do is create a hash map 
+owner: number of properties 
+
+I'm probably guna end up using data table stuff but for now just a quick search
+implementation 
+
+Could I have an owner matched to list of parcelIds instead of count 
+
+Would still be a hashmap since keys are unique 
+
+'City of SA' : [1,2,3,4,5]
+
+what abt for address lookup. If I have a simple list of addresses and their 
+owners, I should be able to use hashmap above. 
+
+'123 Ave' : 'city of sa'
+
+*/
+
+
+function findParcels(){
+
+}
