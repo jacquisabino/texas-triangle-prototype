@@ -46,7 +46,7 @@ fetch('./Data/small_dataset.csv')
             const id = cols[3].trim();
             const owner = cols[14].trim();
 
-            // id is the only unique element per line so that will 
+            // parcel id is the only unique element per line so that will 
             // be left set 
             // first map to address 
             if(!addy || !id || !owner) continue;
@@ -69,7 +69,7 @@ fetch('./Data/small_dataset.csv')
 
         ready = true;
         document.getElementById('status').textContent =
-        `✅ Dataset loaded: ${graph.size.toLocaleString()} graph ready.`;
+        `✅ Dataset loaded: ${graph.toLocaleString()} graph ready.`;
 
         /* For simple testing purposes  
         const addressArr = [...addresses];
