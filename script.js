@@ -69,7 +69,7 @@ fetch('./Data/small_dataset.csv')
 
         ready = true;
         document.getElementById('status').textContent =
-        `✅ Dataset loaded: ${graph.toLocaleString()} graph ready.`;
+        `✅ Dataset loaded: ${graph} graph ready.`;
 
         /* For simple testing purposes  
         const addressArr = [...addresses];
