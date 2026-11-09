@@ -116,7 +116,54 @@ owners, I should be able to use hashmap above.
 
 */
 
+/* parameters: address OR Owner this is returned by my radio button input, 
+                user input 
 
+    to do: default radio button clicked or display error for submitting 
+    without clicking
+*/
 function findParcels(){
+    const addressCheck = document.getElementById('address').value; 
+    const ownerCheck = document.getElementById('landlord').value; 
 
+    if(!addressCheck && !ownerCheck) return { error: `Invalid Selection, must 
+    check a radio button.` };
+    
+    const query = document.getElementById('addOrLan').value.toLowerCase();
+
+    // strict input (change later)
+    if(addressCheck && !addresses.has(query)) return { error: `Invalid address "${query}".` };
+    if(ownerCheck && !owners.has(query)) return { error: `Invalid owner "${query}".` };
+
+    const t0 = performance.now();
+    
+    let toDisplay;
+
+    if(addressCheck){
+        const currOwner = addToOwner.get(query);
+        toDisplay = properties.get(currOwner);
+        
+    } else {
+        toDisplay = properties.get(query);
+    }
+
+    return toDisplay;
 }
+
+// UI stuff 
+
+const resultBox = document.getElementById('results');
+const errorBox = document.getElementById('error');
+// pressing Enter in the text field
+document.getElementById('addOrLan').addEventListener('keydown', e => {
+    errorBox.classList.add('hidden');
+    resultBox.classList.add('hidden');
+
+    if (!ready) {
+        errorBox.textContent = 'Dataset still loading — try again in a second.';
+        errorBox.classList.remove('hidden');
+        return;
+      }
+    
+
+});
