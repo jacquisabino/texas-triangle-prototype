@@ -1,6 +1,8 @@
-import Papa from 'papaparse';
+const Papa = require("papaparse");
 
-// First, convert csv file to json objects 
-Papa.parse(small_dataset.csv, {header: true, complete: function(results) {
-    console.log("Finsihed: ", results.data);}
-    } );
+Papa.parse(small_dataset.csv, {
+  header: true,
+  complete: function(results) {
+    console.log(results.data); 
+  },
+});
