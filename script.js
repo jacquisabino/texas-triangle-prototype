@@ -1,3 +1,5 @@
+import DataTable from 'datatables.net-dt';
+
 const Papa = require("papaparse");
 
 Papa.parse(small_dataset.csv, {
@@ -5,4 +7,9 @@ Papa.parse(small_dataset.csv, {
   complete: function(results) {
     console.log(results.data); 
   },
+});
+
+// Initialise a DataTable
+const table = new DataTable('#myTable', {
+    // Options
 });
