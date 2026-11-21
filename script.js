@@ -18,6 +18,10 @@ const table = new DataTable('#myTable', {
     ajax: 'results'
 });
 
+// results are objects of data keyed by the field name 
+
+// using data tables to display ajax objects of sourced data (with search engine)  
+
 /*
 table.column(0).visible(false, false);
 table.column(1).visible(false, false);
