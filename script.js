@@ -4,8 +4,10 @@ const Papa = require("papaparse");
 
 let results; 
 
+// converting csv data to json  
+
 Papa.parse(small_dataset.csv, {
-  header: false,
+  header: true,
   complete: function(data) {
     results = data.data
   },
@@ -15,6 +17,8 @@ Papa.parse(small_dataset.csv, {
 const table = new DataTable('#myTable', {
     ajax: 'results'
 });
+
+/*
 table.column(0).visible(false, false);
 table.column(1).visible(false, false);
 
@@ -24,6 +28,7 @@ for (var i = 2; i < 14; i++) {
 
 for (var i = 15; i < 69; i++) {
 	table.column(i).visible(false, false);
-}
+} 
 
-table.columns.adjust().draw(false); // adjust column sizing and redraw
+table.columns.adjust().draw(false); // adjust column sizing and redraw */
+
