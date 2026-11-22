@@ -14,7 +14,7 @@ Papa.parse(small_dataset.csv, {
 });
 
 // Initialise a DataTable
-const table = new DataTable('#myTable', {
+let table = new DataTable('#myTable', {
     ajax: 'results'
 });
 
