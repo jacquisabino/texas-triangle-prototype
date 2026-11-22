@@ -1,4 +1,5 @@
-import DataTable from 'datatables.net-dt';
+import DataTable from './node_modules/datatables.net-dt/js/dataTables.dataTables.mjs';
+
 
 const Papa = require("papaparse");
 
